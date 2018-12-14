@@ -21,7 +21,7 @@ class WinChecker {
                         slotsConnected++;
                         if (slotsConnected === 4) {
                             discs.forEach(cur=>{
-                                cur.player = {color: "orange",
+                                cur.player = {color: slot.player.color,
                                 animation: "pulse 1.5s infinite"};
                                 cur.render();
                             });
@@ -44,7 +44,7 @@ class WinChecker {
                     slotsConnected++;
                     if (slotsConnected === 4) {
                         discs.forEach(cur=>{
-                            cur.player = {color: "orange",
+                            cur.player = {color: slot.player.color,
                                 animation: "pulse 1.5s infinite"};
                             cur.render();
                         });
@@ -70,7 +70,7 @@ class WinChecker {
                             slotsConnected++;
                             if (slotsConnected === 4) {
                                 discs.forEach(cur=>{
-                                    cur.player = {color: "orange",
+                                    cur.player = {color: slot.player.color,
                                         animation: "pulse 1.5s infinite"};
                                     cur.render();
                                 });
