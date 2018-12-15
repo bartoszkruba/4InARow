@@ -20,28 +20,44 @@ main {
 }
 
 .startPageWelcome {
-    border: black 10px;
-    height: 50vh;
+    /* border: black 10px; */
+    display: flex;
+    flex-direction: row;
+    min-height: 50vh;
+    width: 100%;
     justify-content: space-between;
 }
 
+.startPageWelcome h1, .startPageWelcome h3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif:
+}
+
 .startPageWelcome section {
-    border: 2px black solid;
+    /* border: 2px black solid; */
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .otherGames {
-    margin-top: 2vh;
-    border: 1px black solid;
+    /* margin-top: 2vh;
+    border: 1px black solid; */
+
 }
 
 .otherGamesImg{
-    border: 1px black solid;
+    /* border: 1px black solid; */
+    border-radius: 20px;
+    width: 100%;
+    margin-bottom: 1vh;
 }
 
 .startPageFirst {
+
+    width: 48%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 
 .startPageFirst a {
@@ -53,20 +69,28 @@ main {
     font-size: 3.5em;
 }
 
+.startPageFirst > div {
+    width: 25vw;
+    height: 25vw;
+}
+
 .startPageSecond {
     display: flex;
     padding-top: 20px;
     flex-direction: column;
     justify-content: space-around;
+    text-align: center;
+    width: 48%;
 }
+
 
 .startPageSecondImage {
     height: 100%;
+    width: 100%;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-image: url("/gameboard.png");
-
 }
 
 .board {
@@ -197,3 +221,27 @@ footer {
         box-shadow: 0 0 0 0 rgba(204,169,44, 0);
     }
 }
+
+@media screen and (max-width: 768px){
+    .startPageWelcome{
+        flex-direction: column;
+    }
+    .startPageWelcome > section{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .startPageFirst > div {
+        width: 50vw;
+        height: 50vw;
+    }
+    .startPageSecondImage {
+        height: 100%;
+        width: 100%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("/gameboard.png");
+    }
+}
+
+
