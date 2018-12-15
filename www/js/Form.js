@@ -67,5 +67,6 @@ class Form extends Component{
         this.gamePage.game = new Game(player1, player2, this.gamePage);
         this.gamePage.render();
         FixEverything.navbar.render(); 
+        console.log(player1, player2);
     }
 }

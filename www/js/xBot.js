@@ -13,8 +13,18 @@ class Bot extends Player{
 
     //returns a valid move
     getMove(){
+        //creating an AI class to check for winning moves 
+        let AI = new xAI(this.game.board.gameBoard);
         let move = this.getValidMoves();
-        return move[this.getRandom(move)];
+        let MoveToReturn = this.getRandom(move)
+
+        //looking for a winning move
+        move.forEach(cur=>{
+            if(AI.validate(cur, this)){
+                MoveToReturn = cur;
+            }
+        })
+        return move[MoveToReturn];
     }
 
     getRandom(validMoves){
