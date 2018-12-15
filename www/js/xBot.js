@@ -1,7 +1,8 @@
 class Bot extends Player{
 
-    constructor(player){
+    constructor(player, opponent){
         super(player);
+        this.opponent = opponent;
     }
 
     runMe(){
@@ -15,7 +16,7 @@ class Bot extends Player{
     getMove(){
         //creating an AI class to check for winning moves 
         let AI = new xAI(this.game.board.gameBoard);
-        let move = this.getValidMoves();
+        let move = this.getValidMoves(this);
         let MoveToReturn = this.getRandom(move)
 
         //looking for a winning move
@@ -23,7 +24,15 @@ class Bot extends Player{
             if(AI.validate(cur, this)){
                 MoveToReturn = cur;
             }
-        })
+        });
+
+        move = this.getValidMoves(this.opponent);
+        move.forEach(cur=>{
+            if(AI.validate(cur, this.opponent)){
+                MoveToReturn = cur;
+            }
+        });
+
         return move[MoveToReturn];
     }
 
@@ -32,10 +41,10 @@ class Bot extends Player{
     }
 
     //returns array with possible valid moves
-    getValidMoves(){
+    getValidMoves(player){
         let validMoves = [];
-        for(let col = 0; col < this.game.board.gameBoard.length; col++){
-            if(this.game.board.gameBoard[col][5].player === null){
+        for(let col = 0; col < player.game.board.gameBoard.length; col++){
+            if(player.game.board.gameBoard[col][5].player === null){
                 validMoves.push(col);
             }
         }

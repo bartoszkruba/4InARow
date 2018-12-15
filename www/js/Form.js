@@ -57,12 +57,19 @@ class Form extends Component{
         if(p1.type === 'human'){
             player1 = new Player(p1, this.gamePage);
         } else if (p1.type === 'bot'){
-            player1 = new Bot(p1, this.gamePage);
+            player1 = new Bot(p1);
         }
         if(p2.type === 'human'){
             player2 = new Player(p2, this.gamePage);
         } else if (p2.type === 'bot'){
-            player2 = new Bot(p2, this.gamePage);
+            player2 = new Bot(p2);
+        }
+
+        if(player1.type === "bot"){
+            player1.opponent = player2;
+        }
+        if(player2.type === "bot"){
+            player2.opponent = player1;
         }
         this.gamePage.game = new Game(player1, player2, this.gamePage);
         this.gamePage.render();
