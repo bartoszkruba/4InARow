@@ -6,7 +6,7 @@ class Bot extends Player{
     }
 
     runMe(){
-      if(FixEverything.game.game.currentPlayer() === this){
+      if(FixEverything.game.game.currentPlayer() === this && this.game.gameOver === false){
         FixEverything.game.game.playBot(this);
       }
       return '';
@@ -42,7 +42,7 @@ class Bot extends Player{
 
     // bug
     getRandom(validMoves){
-        return Math.floor(Math.random() * validMoves.length);
+        return validMoves[Math.floor(Math.random() * validMoves.length)];
     }
 
     //returns array with possible valid moves
