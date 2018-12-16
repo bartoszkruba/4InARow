@@ -20,6 +20,13 @@ class GamePage extends Component{
         } else {
           players[i] = new Player(players[i]);
         }
+
+        if(players[0] instanceof Bot){
+          players[0].opponent = players[1];
+        }
+        if(players[1] instanceof Bot){
+          players[1].opponent = players[0];
+        }
       }
       this.game = new Game(players[0], players[1], this);
       this.winningPage = undefined;
