@@ -7,7 +7,12 @@ class GamePage extends Component{
         this.addEvents({
           'click .show-window-btn' : 'showWinningPage'
         })
-        
+
+        //*
+        this.gamesPlayed = 0;
+        this.draws = 0;
+        //*
+
         // Test uncomment this if you want to test winningPage
         // this.winningPage = new WinningPage(this, {name: 'Jesus Christ Son Of God', turns: 13});
     }

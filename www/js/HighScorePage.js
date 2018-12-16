@@ -18,7 +18,6 @@ class HighScorePage extends Component {
 
     // loading up json file, converting into an array, sorting and displaying it on the page
     async updateScore() {
-        console.log('score updated');
         this.scores = await JSON._load('scores.json');
 
         this.scores = this.scores.slice().sort((a, b) => {

@@ -174,14 +174,14 @@ footer {
     border-bottom-right-radius: 25px;
 }
 
-@keyframes drop {
+/* @keyframes drop {
     0% {
         bottom: 100vh;
     }
     100% {
         bottom: 0;
     }
-}
+} */
 
 @keyframes pulse {
     0% {
