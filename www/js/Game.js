@@ -28,7 +28,7 @@ class Game extends Component {
         setTimeout(() => {
             let validSlot = this.board.placeDisc(current.getMove(), current);
             this.ifValidMove(validSlot, current);
-        }, 1); //*
+        }, 2000); //*
         return '';
     }
 
@@ -69,10 +69,10 @@ class Game extends Component {
                 this.game.render();
 
                 //*
-                if(this.game.gamesPlayed < 500){
-                    this.game.gamesPlayed++;
-                    this.game.rematch(); 
-                }else{alert(`Games Played: ${this.game.gamesPlayed}, Draws: ${this.game.draws}`)} 
+                // if(this.game.gamesPlayed < 500){
+                //     this.game.gamesPlayed++;
+                //     this.game.rematch(); 
+                // }else{alert(`Games Played: ${this.game.gamesPlayed}, Draws: ${this.game.draws}`)} 
                 //*
             }
         }
@@ -82,12 +82,13 @@ class Game extends Component {
             this.gameOver = true;
             this.game.winningPage = new WinningPage(this.game);
             this.game.render();
+
             //*
-            if(this.game.gamesPlayed < 500){
-                this.game.gamesPlayed++;
-                this.game.draws++;
-                this.game.rematch(); // *
-            }else{alert(`Games Played: ${this.game.gamesPlayed}, Draws: ${this.game.draws}`)}
+            // if(this.game.gamesPlayed < 500){
+            //     this.game.gamesPlayed++;
+            //     this.game.draws++;
+            //     this.game.rematch(); // *
+            // }else{alert(`Games Played: ${this.game.gamesPlayed}, Draws: ${this.game.draws}`)}
             //*
         }
     }

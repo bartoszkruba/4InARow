@@ -9,8 +9,8 @@ class GamePage extends Component{
         })
 
         //*
-        this.gamesPlayed = 0;
-        this.draws = 0;
+        // this.gamesPlayed = 0;
+        // this.draws = 0;
         //*
 
         // Test uncomment this if you want to test winningPage
