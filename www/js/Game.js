@@ -25,7 +25,7 @@ class Game extends Component {
     }
 
     playBot(current) {
-        setTimeout(() => {
+        this.pendingTimeout = setTimeout(() => {
             let validSlot = this.board.placeDisc(current.getMove(), current);
             this.ifValidMove(validSlot, current);
         }, 2000); //*

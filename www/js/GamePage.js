@@ -33,6 +33,7 @@ class GamePage extends Component{
           players[1].opponent = players[0];
         }
       }
+      clearTimeout(this.game.pendingTimeout);
       this.game = new Game(players[0], players[1], this);
       this.winningPage = undefined;
       this.render();
