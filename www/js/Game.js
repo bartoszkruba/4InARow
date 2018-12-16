@@ -67,6 +67,7 @@ class Game extends Component {
                 }
                 this.game.winningPage = new WinningPage(this.game, this.winner);
                 this.game.render();
+                this.game.rematch();
             }
         }
 
