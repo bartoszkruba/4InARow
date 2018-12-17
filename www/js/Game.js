@@ -65,6 +65,7 @@ class Game extends Component {
                 if (this.winner.type !== 'bot') {
                     this.game.saveScore({name: this.winner.name, score: 21 - this.winner.discs});
                 }
+                
                 this.game.winningPage = new WinningPage(this.game, this.winner);
                 this.game.render();
 
@@ -74,6 +75,9 @@ class Game extends Component {
                 //     this.game.rematch(); 
                 // }else{alert(`Games Played: ${this.game.gamesPlayed}, Draws: ${this.game.draws}`)} 
                 //*
+                setTimeout(() => {
+                    this.game.render();
+                }, 2000);
             }
         }
 
